@@ -17,7 +17,7 @@ class WildController extends AbstractController
     */
     public function index() :Response
     {
-        return $this->render('/index.html.twig', [
+        return $this->render('wild/index.html.twig', [
             'website' => 'Wild Séries',
         ]);
     }
@@ -25,7 +25,7 @@ class WildController extends AbstractController
     /**
      * @Route("/show/{slug}",
      * requirements={"slug"="[a-z0-9-]+$"},
-     * defaults={"slug"="", "Aucune série sélectionnée, veuillez choisir une série"}, name="show")
+     * defaults={"slug"="Aucune série sélectionnée, veuillez choisir une série"}, name="show")
      */
     public function show(string $slug) :Response
     {
