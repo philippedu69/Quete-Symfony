@@ -114,7 +114,6 @@ class WildController extends AbstractController
              ->findOneBy(['title' => mb_strtolower($programName)]);
 
 
-
          if (!$programName) {
              throw $this
                  ->createNotFoundException('No program has been sent to find a program in program\'s table.');

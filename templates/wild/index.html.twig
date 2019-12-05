@@ -8,6 +8,7 @@
         <div>
             <h3>{{ loop.index }} / {{ program.title }} - Catégorie : {{ program.category.name }} </h3>
             <p>{{ program.summary }}</p>
+            <button type="button" class="btn btn-secondary"><a href ="{{ path('wild_show_program', {'programName': program.title|lower|replace({" ":"-"})}) }}">More information</a></button>
         </div>
     {% else %}
         Aucune série trouvée !
