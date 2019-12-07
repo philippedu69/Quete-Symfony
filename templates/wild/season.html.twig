@@ -14,8 +14,7 @@
         <hr>
         <h4>Liste des épisodes :</h4>
         {% for episode in season.episodes %}
-            <li><strong>Episode {{ episode.number }} :</strong> {{ episode.title }}</li>
-            <p>{{ episode.synopsis }}</p>
+            <li><strong>{{ episode.number }} - <a href ="{{ path('wild_showEpisode', {'id':episode.id}) }}">{{ episode.title }}</a></strong></li>
 
         {% endfor %}
     </div>

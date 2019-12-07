@@ -2,6 +2,7 @@
 // src/Controller/WildController.php
 namespace App\Controller;
 
+use App\Entity\Episode;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -156,4 +157,20 @@ class WildController extends AbstractController
 
         return $this->render('wild/season.html.twig', ['season' => $season]);
     }
+
+    /**
+     * @Route("/episode/{id}", name="showEpisode")
+     */
+
+    public function showEpisode(Episode $episode) :Response
+    {
+        if (!$episode) {
+            throw $this->createNotFoundException(
+                'No episode found in episode\'s table.'
+            );
+        }
+        return $this->render('wild/episode.html.twig', ['episode' => $episode]);
+    }
+
+
 }
