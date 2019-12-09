@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h2>création d'une category !</h2>
+
+    {{ form_start(categoryForm, {'attr': {'novalidate': 'navalidate'}}) }}
+        <div class="form-group">
+            <label for="">nom de la categorie</label>
+            {{ form_widget(categoryForm.name, {'attr' : {'class' : 'form-control'}}) }}
+        </div>
+
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+    {{ form_end(categoryForm) }}
+
+    <h3>Nouvelle categorie : {{ category.name }}</h3>
+{% endblock %}

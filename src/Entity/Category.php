@@ -4,7 +4,11 @@ namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
+use App\Entity\Program;
+use App\Form\CategoryType;
+
 
 
 
@@ -22,6 +26,7 @@ class Category
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Veuillez saisir une category")
      */
     private $name;
 
@@ -32,7 +37,6 @@ class Category
 
     /**
      * Category constructor.
-     * @Param $programs
      */
 
     public function __construct()
