@@ -22,7 +22,7 @@ class CategoryController extends AbstractController
 
     public function newCategory(Request $request):Response
     {
-        $manager = $this->getDoctrine()->getManager();
+
 
         $category = new Category();
         $categoryForm = $this->createForm(CategoryType::class, $category);
@@ -30,6 +30,7 @@ class CategoryController extends AbstractController
         $categoryForm->handleRequest($request);
 
         if ($categoryForm->isSubmitted() && $categoryForm->isValid()) {
+            $manager = $this->getDoctrine()->getManager();
             $manager->persist($category);
             $manager->flush();
         }

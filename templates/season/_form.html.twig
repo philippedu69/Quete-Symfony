@@ -1,0 +1,16 @@
+{% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+
+{{ form_start(form) }}
+    {{ form_row(form.number) }}
+    {{ form_widget(form.number, {'attr' : {'class' : 'form-control'}}) }}
+
+    {{ form_row(form.year) }}
+    {{ form_widget(form.year, {'attr' : {'class' : 'form-control'}}) }}
+
+    {{ form_row(form.description) }}
+    {{ form_widget(form.description, {'attr' : {'class' : 'form-control'}}) }}
+
+    {{ form_row(form.program) }}
+    {{ form_widget(form.program, {'attr' : {'class' : 'form-control'}}) }}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
