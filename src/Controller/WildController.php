@@ -9,6 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Program;
 use App\Entity\Category;
 use App\Entity\Season;
+use App\Entity\Actor;
 
 /**
  * @Route("/wild", name="wild_")
@@ -170,6 +171,20 @@ class WildController extends AbstractController
             );
         }
         return $this->render('wild/episode.html.twig', ['episode' => $episode]);
+    }
+
+    /**
+     * @Route("/actor/{id}", name="showActor")
+     */
+
+    public function showActor(Actor $actor) :Response
+    {
+        if (!$actor){
+            throw $this->createNotFoundException(
+                'No actor found in actor\'s table.'
+            );
+        }
+        return $this->render('wild/actor.html.twig', ['actor' => $actor]);
     }
 
 

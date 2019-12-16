@@ -23,6 +23,7 @@ class ProgramController extends AbstractController
         return $this->render('program/index.html.twig', [
             'programs' => $programRepository->findAll(),
         ]);
+
     }
 
     /**
@@ -31,7 +32,7 @@ class ProgramController extends AbstractController
     public function new(Request $request): Response
     {
         $program = new Program();
-        $form = $this->createForm(ProgramType::class, $program);
+        $form = $this->createForm(ProgramType::class, $program, ['method' => 'GET']);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
