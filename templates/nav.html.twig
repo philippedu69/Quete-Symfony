@@ -29,11 +29,20 @@
                 </div>
             </li>
             </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    New
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="{{ path('wild_form') }}">Créer une categorie</a>
+                    <a class="dropdown-item" href="{{ path('program_new') }}">Créer une série</a>
+                    <a class="dropdown-item" href="{{ path('season_new') }}">Créer une saison</a>
+                    <a class="dropdown-item" href="{{ path('episode_new') }}">Créer un épisode</a>
+            </li>
+
             <li class="nav-item">
                 <a class="nav-link" href="/wild/program/walking-dead">Mes Favoris</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ path('wild_form') }}">Créer une categorie</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/">Deconnexion</a>
