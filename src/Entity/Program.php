@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use App\Service\Slugify;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ProgramRepository")
@@ -49,6 +50,11 @@ class Program
      * @ORM\JoinTable(name="actor_program")
      */
     private $actors;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $slug;
 
     public function __construct()
     {
@@ -165,6 +171,18 @@ class Program
             $this->actors->removeElement($actor);
             $actor->removeProgram($this);
         }
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }

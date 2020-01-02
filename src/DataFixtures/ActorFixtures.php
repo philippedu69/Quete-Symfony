@@ -4,6 +4,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Actor;
+use App\Service\Slugify;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
@@ -12,6 +13,8 @@ use Faker;
 
 class ActorFixtures extends Fixture implements DependentFixtureInterface
 {
+    protected $faker;
+
     const ACTORS = [
         'Andrew Lincoln',
         'Norman Reedus',
@@ -27,8 +30,12 @@ class ActorFixtures extends Fixture implements DependentFixtureInterface
         foreach(Self::ACTORS as $key => $actorName){
             $actor = new Actor();
             $actor->setName($actorName);
-            $manager->persist($actor);
+            $slug = new Slugify();
+            $slug = $slug->generate($actor->getName());
+            $actor->setSlug($slug);
             $this->addReference('actor' .$key, $actor);
+            $actor->addProgram($this->getReference('program'. random_int(0,5)));
+            $manager->persist($actor);
         }
 
         $faker = Faker\Factory::create('fr_FR');
@@ -37,10 +44,12 @@ class ActorFixtures extends Fixture implements DependentFixtureInterface
         for($i=6; $i <= 50; $i++){
             $actor = new Actor();
             $actor->setName($faker->name);
-            $manager->persist($actor);
+            $slug = new Slugify();
+            $slug = $slug->generate($actor->getName());
+            $actor->setSlug($slug);
             $this->addReference('actor' .$i, $actor);
-            $i++;
             $actor->addProgram($this->getReference('program'. random_int(0,5)));
+            $manager->persist($actor);
 
         }
         $manager->flush();

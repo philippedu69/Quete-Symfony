@@ -5,6 +5,7 @@ namespace App\DataFixtures;
 
 use App\Entity\Category;
 use App\Entity\Program;
+use App\Service\Slugify;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
@@ -48,10 +49,13 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
             $program = new Program();
             $program -> setTitle($title);
             $program -> setSummary($data['summary']);
-            $program -> setPoster($faker->imageUrl($width = 480, $height = 640));
-            $program->setCategory($this->getReference($data['category']));
-            $this-> addReference('program' .$i, $program);
+            $program -> setPoster($faker->imageUrl($width = 240, $height = 320));
+            $program->setCategory($this->getReference('categorie_1'));
+            $slug = new Slugify();
+            $slug = $slug->generate($program->getTitle());
+            $program->setSlug($slug);
             $manager->persist($program);
+            $this-> addReference('program' .$i, $program);
             $i++;
         }
 
