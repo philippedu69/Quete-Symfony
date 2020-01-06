@@ -1,0 +1,22 @@
+
+{% apply inline_css %}
+    <style>
+        button{
+            background-color: #388E3C;
+        }
+    </style>
+    <container>
+        <row class="header header-light bg-primary">
+            <columns>
+                <h2 class="text-center">Une nouvelle série est sur Wild série !</h2>
+                <h3>{{ mailProgram }}</h3>
+            </columns>
+        </row>
+
+        <row class="body text-center">
+            <columns>
+                <a href="http://127.0.0.1:8001/program/{{ mailSlug }}"><button type="button" class="btn btn-primary">plus d'infos</button></a>
+            </columns>
+        </row>
+    </container>
+{% endapply %}

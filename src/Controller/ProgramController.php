@@ -9,6 +9,8 @@ use App\Service\Slugify;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
@@ -33,9 +35,10 @@ class ProgramController extends AbstractController
      * @Route("/new", name="program_new", methods={"GET","POST"})
      * @param Slugify $slugify
      * @param Request $request
+     * @param MailerInterface $email
      * @return Response
      */
-    public function new(Request $request, Slugify $slugify): Response
+    public function new(Request $request, Slugify $slugify, MailerInterface $mailer): Response
     {
         $program = new Program();
         $form = $this->createForm(ProgramType::class, $program, ['method' => 'GET']);
@@ -48,6 +51,22 @@ class ProgramController extends AbstractController
             $entityManager->persist($program);
             $entityManager->flush();
 
+            $mailProgram = $program->getTitle();
+            $mailSlug = $program->getSlug();
+
+
+            $email = (new Email())
+                ->from($this->getParameter('mailer_from'))
+                ->to($this->getParameter('mailer_to'))
+                ->subject('une série est là')
+                ->html($this->renderView('program/email/notification.html.twig', [
+                    'mailProgram' => $mailProgram,
+                    'mailSlug' => $mailSlug
+                ]));
+
+            $mailer->send($email);
+
+
             return $this->redirectToRoute('program_index');
         }
 
@@ -58,7 +77,7 @@ class ProgramController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="program_show", methods={"GET"})
+     * @Route("/{slug}", name="program_show", methods={"GET"})
      * @param Program $program
      * @return Response
      */
