@@ -6,4 +6,10 @@
     <h2>Episode {{ episode.number }} - {{ episode.title }} de la <a href="{{ path('wild_showSeason', {'id': episode.season.id}) }}">{{ episode.season.description }}</a> de <a href="{{ path('wild_show_program', {'programName': episode.season.program.title|lower|replace({" ":"-"})}) }}">{{ episode.season.program.title }}</a></h2>
     <p>{{ episode.synopsis }}</p>
 
+    {% if app.user %}
+        <h5>Déposer un nouveau commentaire</h5>
+        {{ form(form) }}
+    {% endif %}
+
+
 {% endblock %}

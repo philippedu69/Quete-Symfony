@@ -45,9 +45,18 @@
             <li class="nav-item">
                 <a class="nav-link" href="/wild/program/walking-dead">Mes Favoris</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/">Deconnexion</a>
-            </li>
+            <div class="login">
+                <li class="nav-item mr-3 ml-3">
+                    {% if app.user %}
+                    {{ app.user.email }}
+                        <a class="logout" style="color: black;" href="{{ path('app_logout') }}"> Se déconnecter</a>
+                </li>
+                <li class="nav-item mr-3">
+                    {% else %}
+                        <a style="color: black;" href="{{ path('app_login') }}"> Se connecter</a>
+                </li>
+                {% endif %}
+            </div>
         </ul>
     </div>
 </nav>

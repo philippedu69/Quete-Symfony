@@ -2,8 +2,11 @@
 // src/Controller/WildController.php
 namespace App\Controller;
 
+use App\Entity\Comment;
 use App\Entity\Episode;
+use App\Form\CommentType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Program;
@@ -161,6 +164,8 @@ class WildController extends AbstractController
 
     /**
      * @Route("/episode/{id}", name="showEpisode")
+     * @param Episode $episode
+     * @return Response
      */
 
     public function showEpisode(Episode $episode) :Response
@@ -171,6 +176,34 @@ class WildController extends AbstractController
             );
         }
         return $this->render('wild/episode.html.twig', ['episode' => $episode]);
+    }
+
+    /**
+     * @Route("/episode/newcomm/{id}", name="episodeComments")
+     * @param Request $request
+     * @param Episode $episode
+     * @return Response
+     */
+    public function newComment(Request $request, Episode $episode): Response
+    {
+
+        $comment = new Comment();
+        $form = $this->createForm(CommentType::class, $comment);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $comment->setEpisode($episode);
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($comment);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('comment_index');
+        }
+        return $this->render('wild/episode.html.twig', [
+            'comment' =>$comment,
+            'episode'=>$episode,
+            'form' => $form->createView(),
+        ]);
     }
 
     /**

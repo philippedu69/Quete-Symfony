@@ -6,5 +6,12 @@ $theme-colors: (
 body {
     background-color: #CDDC39;
 }
+.login {
+    margin-left: 400px;
+}
+
+.logout {
+    margin-left: 20px;
+}
 
 @import "~bootstrap/scss/bootstrap";

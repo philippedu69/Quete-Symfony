@@ -14,8 +14,11 @@
         <hr>
         <h4>Liste des épisodes :</h4>
         {% for episode in season.episodes %}
-            <li><strong>{{ episode.number }} - <a href ="{{ path('wild_showEpisode', {'id':episode.id}) }}">{{ episode.title }}</a></strong></li>
-
+            {% if app.user %}
+            <li><strong>{{ episode.number }} - <a href ="{{ path('wild_episodeComments', {'id':episode.id}) }}">{{ episode.title }}</a></strong></li>
+            {% else %}
+                <li><strong>{{ episode.number }} - <a href ="{{ path('wild_showEpisode', {'id':episode.id}) }}">{{ episode.title }}</a></strong></li>
+            {% endif %}
         {% endfor %}
     </div>
 

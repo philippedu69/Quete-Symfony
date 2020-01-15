@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Comment;
 use App\Entity\Episode;
+use App\Form\CommentType;
 use App\Form\EpisodeType;
 use App\Service\Slugify;
 use App\Repository\EpisodeRepository;
@@ -65,6 +67,7 @@ class EpisodeController extends AbstractController
     {
         return $this->render('episode/show.html.twig', [
             'episode' => $episode,
+            'from' => 'pppprrrrrout'
         ]);
     }
 
@@ -77,6 +80,8 @@ class EpisodeController extends AbstractController
      */
     public function edit(Request $request, Episode $episode, Slugify $slugify): Response
     {
+
+
         $slug = $slugify->generate($episode->getTitle());
         $episode->setSlug($slug);
 
@@ -95,7 +100,7 @@ class EpisodeController extends AbstractController
 
 
     /**
-     * @Route("/{id}", name="episode_delete", methods={"DELETE"})
+     * @Route("/delete/{id}", name="episode_delete", methods={"DELETE"})
      * @param Request $request
      * @param Episode $episode
      * @return Response

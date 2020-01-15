@@ -33,10 +33,11 @@ class ProgramController extends AbstractController
 
     /**
      * @Route("/new", name="program_new", methods={"GET","POST"})
-     * @param Slugify $slugify
      * @param Request $request
-     * @param MailerInterface $email
+     * @param Slugify $slugify
+     * @param MailerInterface $mailer
      * @return Response
+     * @throws \Symfony\Component\Mailer\Exception\TransportExceptionInterface
      */
     public function new(Request $request, Slugify $slugify, MailerInterface $mailer): Response
     {

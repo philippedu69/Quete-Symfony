@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Comment{% endblock %}
+
+{% block body %}
+<h1>Commentaire</h1>
+
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ comment.id }}</td>
+        </tr>
+        <tr>
+            <th>Commentaire</th>
+            <td>{{ comment.comment }}</td>
+        </tr>
+        <tr>
+            <th>Note</th>
+            <td>{{ comment.rate }}</td>
+        </tr>
+        <tr>
+            <th>Auteur</th>
+            <td>{{ app.user.email }}</td>
+        </tr>
+        <tr>
+            <th>Episode</th>
+            <td>{{ comment.episode.title }}</td>
+        </tr>
+        </tbody>
+    </table>
+    <a href="{{ path('comment_index') }}">retour à la liste des commentaires</a>
+{% endblock %}
