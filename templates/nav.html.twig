@@ -1,59 +1,59 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-    <a class="navbar-brand" href="#">Wild Series</a>
+    <a class="navbar-brand text-white" href="{{ path('app_index') }}">Wild Series</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
 
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Categories
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="#"></a>
-                    <a class="dropdown-item" href="/wild">comedie</a>
-                    <a class="dropdown-item" href="/wild">Horreur</a>
-                    <a class="dropdown-item" href="#">Drame</a>
-                    <a class="dropdown-item" href="#">Jeunesse</a>
+                    <a class="dropdown-item" href="/wild/category/comedie">comedie</a>
+                    <a class="dropdown-item" href="/wild/category/horreur">Horreur</a>
+                    <a class="dropdown-item" href="/wild/category/drame">Drame</a>
+                    <a class="dropdown-item" href="/wild/category/jeunesse">Jeunesse</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Acteurs
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Jojo lapin</a>
-                    <a class="dropdown-item" href="#">Show show lapine</a>
-                    <a class="dropdown-item" href="#">Rocco siffredo</a>
+                    <a class="dropdown-item" href="#">Jennifer Aniston</a>
+                    <a class="dropdown-item" href="#">Andrew Lincoln</a>
+                    <a class="dropdown-item" href="#">Freddy Highmore</a>
 
                 </div>
             </li>
             </li>
 
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    New
+                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Ajouter
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="{{ path('wild_form') }}">Créer une categorie</a>
-                    <a class="dropdown-item" href="{{ path('program_new') }}">Créer un programme</a>
-                    <a class="dropdown-item" href="{{ path('season_new') }}">Créer une saison</a>
-                    <a class="dropdown-item" href="{{ path('episode_new') }}">Créer un épisode</a>
-                    <a class="dropdown-item" href="{{ path('actor_new') }}">Ajouter un acteur</a>
+                    <a class="dropdown-item" href="{{ path('wild_form') }}">Une categorie</a>
+                    <a class="dropdown-item" href="{{ path('program_new') }}">Un programme</a>
+                    <a class="dropdown-item" href="{{ path('season_new') }}">Une saison</a>
+                    <a class="dropdown-item" href="{{ path('episode_new') }}">Un épisode</a>
+                    <a class="dropdown-item" href="{{ path('actor_new') }}">Un acteur</a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="/wild/program/walking-dead">Mes Favoris</a>
+                <a class="nav-link text-white" href="/wild/program/walking-dead">Mes Favoris</a>
             </li>
             <div class="login">
-                <li class="nav-item mr-3 ml-3">
+                <li class="nav-item mr-3 ml-3 mt-2 text-white">
                     {% if app.user %}
                     {{ app.user.email }}
-                        <a class="logout" style="color: black;" href="{{ path('app_logout') }}"> Se déconnecter</a>
+                        <a class="logout" style="color: white;" href="{{ path('app_logout') }}"> Se déconnecter</a>
                 </li>
                 <li class="nav-item mr-3">
                     {% else %}
-                        <a style="color: black;" href="{{ path('app_login') }}"> Se connecter</a>
+                        <a style="color: white;" href="{{ path('app_login') }}"> Se connecter</a>
                 </li>
                 {% endif %}
             </div>

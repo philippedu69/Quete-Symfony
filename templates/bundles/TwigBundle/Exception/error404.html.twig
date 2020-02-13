@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Erreur 404{% endblock %}
+
+{% block body %}
+    <div class="error text-center mt-5">
+        <h2>ERREUR {{ status_code }}</h2>
+        <h4>Pas de Programme dans cette catégorie</h4>
+        <a href="{{ path('app_index') }}">Retour à l'accueil</a>
+    </div>
+
+
+{% endblock %}

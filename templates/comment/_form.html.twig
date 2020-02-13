@@ -1,11 +1,11 @@
-{% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+{% form_theme formComment 'bootstrap_3_horizontal_layout.html.twig' %}
 
-{{ form_start(form) }}
-    {{ form_row(form.comment) }}
-    {{ form_widget(form.comment, {'attr' : {'class' : 'form-control'}}) }}
+{{ form_start(formComment) }}
+    {{ form_row(formComment.comment) }}
+    {{ form_widget(formComment.comment, {'attr' : {'class' : 'form-control', 'placeholder' : 'Vos commentaires'}}) }}
 
-    {{ form_row(form.rate) }}
-    {{ form_widget(form.rate, {'attr' : {'class' : 'form-control'}}) }}
+    {{ form_row(formComment.rate) }}
+    {{ form_widget(formComment.rate, {'attr' : {'class' : 'form-control'}}) }}
 
     <button class="btn-btn-success">{{ button_label|default('ajouter') }}</button>
-{{ form_end(form) }}
+{{ form_end(formComment) }}

@@ -18,15 +18,21 @@ class CommentType extends AbstractType
         $builder
             ->add('comment', TextareaType::class, [
                 'attr'=> [
-                    'class' => 'form-control'
+                    'class' => 'form-control',
+                    'placeholder' => 'votre commentaire'
                 ]
             ])
             ->add('rate', IntegerType::class, [
                 'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'votre note'
+                ]
+            ])
+            ->add('Soumettre', SubmitType::class, [
+                'attr' => [
                     'class' => 'form-control'
                 ]
             ])
-            ->add('Soumettre', SubmitType::class)
         ;
     }
 

@@ -3,7 +3,7 @@
 {% block title %}Comment{% endblock %}
 
 {% block body %}
-<h1>Commentaire</h1>
+    <h2>Détail des commentaires</h2>
 
     <table class="table">
         <tbody>
@@ -21,13 +21,26 @@
         </tr>
         <tr>
             <th>Auteur</th>
-            <td>{{ app.user.email }}</td>
+            <td>{{ comment.author.id }} - {{ comment.author.email }}</td>
         </tr>
         <tr>
             <th>Episode</th>
-            <td>{{ comment.episode.title }}</td>
+            <td>{{ comment.episode.id }} - {{ comment.episode.title }}</td>
         </tr>
         </tbody>
     </table>
-    <a href="{{ path('comment_index') }}">retour à la liste des commentaires</a>
+
+    {% if app.user.email == comment.author.email %}
+
+        {{ include('comment/_delete_form.html.twig') }}
+
+    {% elseif is_granted(['ROLE_ADMIN']) %}
+
+        {{ include('comment/_delete_form.html.twig') }}
+
+    {% endif %}
+
+    <button class="btn btn-secondary"><a href="{{ path('wild_episodeComments', {'id' : comment.episode.id}) }}">retour à
+            la liste des commentaires</a></button>
+
 {% endblock %}

@@ -4,7 +4,7 @@ $theme-colors: (
 );
 
 body {
-    background-color: #CDDC39;
+    background-color: greenyellow;
 }
 .login {
     margin-left: 400px;
@@ -12,6 +12,39 @@ body {
 
 .logout {
     margin-left: 20px;
+}
+
+.container {
+    display: flex;
+}
+// CSS page category
+.content {
+    position: relative;
+}
+
+.button {
+    position: absolute;
+    bottom: 15px;
+}
+
+// CSS page program
+
+.description {
+    display: flex;
+}
+
+.commentList {
+    display: flex;
+    position: relative;
+    border: #388E3C solid 2px;
+    border-radius: 5px;
+    margin-left: 10%;
+}
+
+.buttonDetail {
+    position: absolute;
+    right: 2%;
+    top: 30%;
 }
 
 @import "~bootstrap/scss/bootstrap";

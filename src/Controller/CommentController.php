@@ -4,12 +4,12 @@
 namespace App\Controller;
 
 use App\Entity\Comment;
-use App\Form\CommentType;
 use App\Repository\CommentRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+
 
 /**
  * @Route("/comment")
@@ -30,7 +30,6 @@ class CommentController extends AbstractController
     }
 
 
-
     /**
      * @Route("/{id}", name="comment_show")
      * @param int $id
@@ -38,12 +37,15 @@ class CommentController extends AbstractController
      */
     public function show(int $id): Response
     {
+
         $comment = $this->getDoctrine()
             ->getRepository(Comment::class)
             ->find(['id' => $id]);
 
+
         return $this->render('comment/show.html.twig', [
-            'comment' => $comment
+            'comment' => $comment,
+
         ]);
     }
 }

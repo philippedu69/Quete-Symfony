@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>{{ hello }} sur Wild Series !</h1>
+    <div>
+    <h1 class="text-center">{{ hello }} sur Wild Series !</h1>
 
-    {% if is_granted ( 'IS_AUTHENTICATED_FULLY' ) %}
-        <p> Email: {{ app.user.email }} </p >
-    {% endif %}
+
+    </div>
 {% endblock %}

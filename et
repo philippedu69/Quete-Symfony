@@ -1,0 +1,119 @@
+[33mcommit 456f01f1143b09a01c0a217cb00371d98a62122a[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/symfony18[m[33m, [m[1;32msymfony19[m[33m, [m[1;32msymfony18[m[33m)[m
+Author: philippedu69 <philippeperrin1968@free.fr>
+Date:   Wed Jan 15 17:12:13 2020 +0100
+
+    quete symfony18 : gestion des utilisateurs
+
+[33mcommit 6d427416d28440bdb60a1634b43ddd92bd1912e9[m[33m ([m[1;31morigin/symfony17[m[33m, [m[1;32msymfony17[m[33m)[m
+Author: philippedu69 <philippeperrin1968@free.fr>
+Date:   Mon Jan 6 14:01:38 2020 +0100
+
+    symfony 17 : Mail
+
+[33mcommit f72062c8db584d1e8303eec6a5891dec55507866[m[33m ([m[1;31morigin/symfony16[m[33m)[m
+Author: philippedu69 <philippeperrin1968@free.fr>
+Date:   Thu Jan 2 11:58:22 2020 +0100
+
+    quete symfony 16 : les services
+
+[33mcommit bfad25b48633763c8833da5e8be65c890f04c9b3[m[33m ([m[1;31morigin/symfony15[m[33m)[m
+Author: philippedu69 <philippeperrin1968@free.fr>
+Date:   Fri Dec 20 16:40:17 2019 +0100
+
+    symfony15 : fixtures
+
+[33mcommit 0f20538273c5fba3f274b3f66dc2fe83e75335e4[m[33m ([m[1;31morigin/symfony14[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: philippedu69 <philippeperrin1968@free.fr>
+Date:   Mon Dec 16 14:45:00 2019 +0100
+
+    quete symfony 14 : EntityType
+
+[33mcommit cc85e921f4064207c81b27ab63c0ab74263ca3ee[m[33m ([m[1;31morigin/symfony13[m[33m)[m
+Author: philippedu69 <philippeperrin1968@free.fr>
+Date:   Mon Dec 16 10:59:27 2019 +0100
+
+    quete Symfony13: many to many
+
+[33mcommit e6f23bf05230c34f71f39f2c585a1a1dd25cd34f[m[33m ([m[1;31morigin/symfony12[m[33m)[m
+Author: philippedu69 <philippeperrin1968@free.fr>
+Date:   Tue Dec 10 11:49:51 2019 +0100
+
+    quete Symfony12 : CRUD
+
+[33mcommit 68d4d877221c1edc87ba1bf513367cb2a40188a4[m[33m ([m[1;31morigin/symfony11[m[33m)[m
+Author: philippedu69 <philippeperrin1968@free.fr>
+Date:   Mon Dec 9 17:59:25 2019 +0100
+
+    quete Symfony11 : formulaire
+
+[33mcommit fb596e44aa342391aca93330f6ce29d732279089[m[33m ([m[1;31morigin/symfony9[m[33m)[m
+Author: philippedu69 <philippeperrin1968@free.fr>
+Date:   Sat Dec 7 14:38:28 2019 +0100
+
+    quete Symfony19 : param converter
+
+[33mcommit 8fadf0ec50c4385af977585f99e6a11ea8b4e900[m
+Author: philippedu69 <philippeperrin1968@free.fr>
+Date:   Thu Dec 5 15:03:15 2019 +0100
+
+    ajout lien vidéo fichier readme
+
+[33mcommit 44fdb6d983fcefaec743a993da98260f8c0e6a76[m
+Author: philippedu69 <philippeperrin1968@free.fr>
+Date:   Thu Dec 5 14:56:48 2019 +0100
+
+    amelioration quete Symfony9
+
+[33mcommit 86f92925fb6e1f7164161abf4192b178c7187555[m
+Author: philippedu69 <philippeperrin1968@free.fr>
+Date:   Thu Dec 5 12:53:21 2019 +0100
+
+    quete Symfony9 : relations bidirectionnelles
+
+[33mcommit d7983bc4bbe01350865eb8e2266bc2e8cde8b4a3[m
+Author: philippedu69 <philippeperrin1968@free.fr>
+Date:   Tue Dec 3 14:29:37 2019 +0100
+
+    quete Symfony8 : récuperer des données stockées avec Doctrine
+
+[33mcommit 166310f408f4e5de79dad2a8b686749110cf5a40[m
+Author: philippedu69 <philippeperrin1968@free.fr>
+Date:   Tue Dec 3 11:43:13 2019 +0100
+
+    quete Symfony7 : relation ManyToOne avec doctrine
+
+[33mcommit 111d32a4cf3d2fef4fbd3be0f872fd5da0c71c3d[m
+Author: philippedu69 <philippeperrin1968@free.fr>
+Date:   Tue Dec 3 10:07:10 2019 +0100
+
+    quete Symfony6 : création entity doctrine
+
+[33mcommit 3973b223325bdd03a4ee2e8db2e32ee8bf1aba34[m
+Author: philippedu69 <philippeperrin1968@free.fr>
+Date:   Mon Dec 2 18:02:22 2019 +0100
+
+    quete Symfony5 : le routing avancé
+
+[33mcommit 1706ff45dc31273a2c28f7fdc998e31e42191f83[m
+Author: philippedu69 <philippeperrin1968@free.fr>
+Date:   Mon Dec 2 16:58:05 2019 +0100
+
+    quete Symfony4 : installation module webpack
+
+[33mcommit 843c5f9ca9e100e67eb2b19e366247018d44c2c7[m
+Author: philippedu69 <philippeperrin1968@free.fr>
+Date:   Mon Dec 2 16:04:01 2019 +0100
+
+    first commit
+
+[33mcommit 4caf7dc08fcfe52bd99f6b17ed01967f63e32233[m
+Author: philippedu69 <philippeperrin1968@free.fr>
+Date:   Mon Dec 2 15:57:44 2019 +0100
+
+    quete Symfony3 : création de la page d'accueil
+
+[33mcommit ad45234b98678061ae1b873920df84fb053729c7[m
+Author: philippedu69 <philippeperrin1968@free.fr>
+Date:   Mon Dec 2 15:05:52 2019 +0100
+
+    Add initial set of files

@@ -4,6 +4,7 @@
 
 {% block body %}
     <h2>Toutes les séries de la table programme</h2>
+
     {% for program in programs %}
         <div>
             <h3>{{ loop.index }} / {{ program.title }} - Catégorie : {{ program.category.name }} </h3>

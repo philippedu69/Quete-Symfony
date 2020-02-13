@@ -2,12 +2,26 @@
 {% block title %}liste série{% endblock %}
 
 {% block body %}
-    <h2>liste des 3 dernières séries</h2>
-    <ul>
-        {% for program in programs %}
-            <li>{{ program.id }} - {{ program.title }}</li>
-            <p>{{ program.summary }}</p>
-        {% endfor %}
-    </ul>
+
+    {% for program in programs %}
+        <div class="container mt-5 ml-0">
+            <div class="poster mr-5 mb-3">
+                <img src="{{ program.poster }}">
+            </div>
+            <div class="content">
+                <div class="title">
+                    <h2>{{ program.title }}</h2>
+                    <p class="w-50 text-justify">{{ program.summary }}</p>
+                </div>
+                <div class="button">
+                    <button type="button" class="btn btn-secondary"><a class="text-black-50"
+                                                                       href="{{ path('wild_show_program', {'programName': program.title|lower|replace({" ":"-"})}) }}">Plus
+                            d'informations</a></button>
+                </div>
+            </div>
+        </div>
+        <hr>
+    {% endfor %}
+
 
 {% endblock %}
