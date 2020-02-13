@@ -2,8 +2,28 @@
 
 {% block body %}
     <div>
-    <h1 class="text-center">{{ hello }} sur Wild Series !</h1>
-
-
+        <h1 class="text-center">{{ hello }} sur Wild Series !</h1>
     </div>
+    <section>
+        <div class="container py-3">
+            <div class="row">
+                {% for program in programs %}
+                    <div class="mr-5 mt-5" id="cardAccueil">
+                        <div>
+                            <img id="picture" src="{{ program.poster }}" alt="Card image cap">
+                        </div>
+                        <div class="textCard ml-3 mr-3">
+                            <h4>Catégorie : {{ program.category.name }}</h4>
+                            <h5 class="card-title">{{ program.title }}</h5>
+                            <p class="card-text text-justify">{{ program.summary }}</p>
+                            <button type="button" class="btn btn-primary" id="button"><a class="text-white"
+                                        href="{{ path('wild_show_program', {'programName': program.title|lower|replace({" ":"-"})}) }}">More
+                                    information</a></button>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
 {% endblock %}

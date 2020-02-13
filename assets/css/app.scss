@@ -6,6 +6,28 @@ $theme-colors: (
 body {
     background-color: greenyellow;
 }
+
+// CSS page accueil
+#cardAccueil {
+    display: flex;
+    width: 45%;
+    border: solid #CDDC39 1px;
+    border-radius: 5px;
+}
+
+.textCard {
+    position: relative;
+}
+
+#button {
+    position: absolute;
+    bottom: 15px;
+    right: 3%;
+}
+
+#picture {
+    width: 190px;
+}
 .login {
     margin-left: 400px;
 }
