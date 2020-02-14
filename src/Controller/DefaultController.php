@@ -21,7 +21,9 @@ class DefaultController extends AbstractController
 
         $programs = $this->getDoctrine()
             ->getRepository(Program::class)
-            ->findAll();
+            ->findBy([], ['id' => 'DESC'],
+                3,
+                0);
 
         return $this->render('/home.html.twig', [
             'hello' => 'Bienvenue',
