@@ -5,10 +5,13 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity ;
+use Symfony\Component\Validator\Constraints as Assert ;
 use App\Service\Slugify;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ProgramRepository")
+ * @UniqueEntity("title", message="Ce titre existe déjà !")
  */
 class Program
 {
@@ -21,11 +24,18 @@ class Program
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Veuillez entrer un titre")
+     * @Assert\Length(max="255", maxMessage="Le titre de la série de doit pas dépasser {{ limit }}")
      */
     private $title;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank(message="Veuillez entrer une description")
+     * @Assert\Regex(
+     *     pattern="/plus|belle|la|vie/",
+     *     match=false,
+     *     message="On parle de vraies série ici !")
      */
     private $summary;
 

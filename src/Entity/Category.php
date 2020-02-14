@@ -26,7 +26,8 @@ class Category
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank(message="Veuillez saisir une category")
+     * @Assert\NotBlank(message="Veuillez saisir une categorie")
+     * @Assert\Length(max="255", maxMessage="La categorie saisie {{ value }} est trop longue, elle ne doit pas dépasser {{ limit }} caractères")
      */
     private $name;
 
