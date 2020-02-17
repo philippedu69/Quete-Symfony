@@ -43,8 +43,5 @@ class DefaultController extends AbstractController
         return $this->render('/register.html.twig', [
             'user'=> $user
         ]);
-        dump($user);
-        die();
     }
-
 }

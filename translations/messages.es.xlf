@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="es" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="CDjx2ju" resname="hello_username">
+        <source>hello_username</source>
+        <target>hola %username%</target>
+      </trans-unit>
+      <trans-unit id="Q7UTU9q" resname="account.logout">
+        <source>account.logout</source>
+        <target>Apagar</target>
+      </trans-unit>
+      <trans-unit id="E_t5j6Q" resname="account.login">
+        <source>account.login</source>
+        <target>Firme en el registro.</target>
+      </trans-unit>
+      <trans-unit id="YFtyfT9" resname="actors">
+        <source>actors</source>
+        <target>Actores</target>
+      </trans-unit>
+      <trans-unit id="hm9bNUP" resname="new add">
+        <source>new add</source>
+        <target>Añadir</target>
+      </trans-unit>
+      <trans-unit id="rv1QPli" resname="my favorities">
+        <source>my favorities</source>
+        <target>Mis Favoritos</target>
+      </trans-unit>
+      <trans-unit id="uLHYlMa" resname="Categories">
+        <source>Categories</source>
+        <target>Categorias</target>
+      </trans-unit>
+      <trans-unit id="z4uHJMI" resname="langage">
+        <source>langage</source>
+        <target>lenguaje</target>
+      </trans-unit>
+      <trans-unit id="Ibs2rQY" resname="french">
+        <source>french</source>
+        <target>Francés</target>
+      </trans-unit>
+      <trans-unit id="tiNNLqD" resname="english">
+        <source>english</source>
+        <target>Inglés</target>
+      </trans-unit>
+      <trans-unit id="nJsTRGz" resname="spanish">
+        <source>spanish</source>
+        <target>Español</target>
+      </trans-unit>
+      <trans-unit id="TDKAwX_" resname="italian">
+        <source>italian</source>
+        <target>Italiano</target>
+      </trans-unit>
+      <trans-unit id="KA1Eqx6" resname="welcome">
+        <source>welcome</source>
+        <target>Bienvenido a</target>
+      </trans-unit>
+      <trans-unit id="mSL48Tc" resname="thanks to identificate">
+        <source>thanks to identificate</source>
+        <target>Por favor, inicie sesión</target>
+      </trans-unit>
+      <trans-unit id="dht62K1" resname="summary">
+        <source>summary</source>
+        <target>__summary</target>
+      </trans-unit>
+      <trans-unit id="oSYP6ZK" resname="more information">
+        <source>more information</source>
+        <target>Más información</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -7,7 +7,7 @@
         <ul class="navbar-nav">
 
                 <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Categories
+                    {{ 'Categories'|trans }}
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="#"></a>
@@ -19,7 +19,7 @@
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Acteurs
+                    {{ 'actors'|trans }}
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="#">Jennifer Aniston</a>
@@ -32,7 +32,7 @@
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Ajouter
+                    {{ 'new add'|trans }}
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="{{ path('wild_form') }}">Une categorie</a>
@@ -43,9 +43,9 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link text-white" href="/wild/program/walking-dead">Mes Favoris</a>
+                <a class="nav-link text-white" href="/wild/program/walking-dead">{{ 'my favorities'|trans }}</a>
             </li>
-            <div class="login">
+            {#<div class="login">
                 <li class="nav-item mr-3 mt-2">
                     {% if app.user %}
                         <a class="text-white" href="{{ path('app_profile') }}">Mon compte</a>
@@ -56,19 +56,33 @@
                         <a class="text-white" href="{{ path('app_register') }}">Se connecter</a>
                 </li>
                 {% endif %}
-            </div>
-            {#<div class="login">
-                <li class="nav-item mr-3 ml-3 mt-2 text-white">
+            </div>#}
+            <div class="login">
+                <li class="nav-item mt-2 text-white">
                     {% if app.user %}
-                    {{ app.user.email }}
-                        <a class="logout" style="color: white;" href="{{ path('app_logout') }}"> Se déconnecter</a>
+                        {%  trans with {'%username%' : app.user.email } %}
+                            hello_username
+                        {% endtrans %} !
+                        <a class="logout" style="color: white;" href="{{ path('app_logout') }}"> {{ 'account.logout'|trans }}</a>
                 </li>
                 <li class="nav-item mr-3">
                     {% else %}
-                        <a style="color: white;" href="{{ path('app_login') }}"> Se connecter</a>
+                        <a style="color: white;" href="{{ path('app_login') }}">{{ 'account.login'|trans }}</a>
                 </li>
                 {% endif %}
-            </div>#}
+            </div>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{ 'langage'|trans }}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="{{ path('app_index', { '_locale' : 'fr' }) }}">{{ 'french'|trans }}<img class="ml-3" src="/images/france.png" alt="french flag"></a>
+                    <a class="dropdown-item" href="{{ path('app_index', { '_locale' : 'en' }) }}">{{ 'english'|trans }}<img class="ml-4" src="/images/angleterre.png" alt="english flag"></a>
+                    <a class="dropdown-item" href="{{ path('app_index', { '_locale' : 'es' }) }}">{{ 'spanish'|trans}}<img class="ml-2" src="/images/spain.png" alt="spain flag"></a>
+                    <a class="dropdown-item" href="{{ path('app_index', { '_locale' : 'it' }) }}">{{ 'italian'|trans}}<img class="ml-4" src="/images/italy.png" alt="italy flag"></a>
+
+                </div>
+            </li>
         </ul>
     </div>
 </nav>
