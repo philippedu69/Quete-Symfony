@@ -6,6 +6,7 @@ namespace App\Controller;
 use App\Entity\Category;
 use App\Entity\Program;
 use App\Entity\User;
+use App\Repository\CategoryRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -42,6 +43,22 @@ class DefaultController extends AbstractController
 
         return $this->render('/register.html.twig', [
             'user'=> $user
+        ]);
+    }
+
+    /**
+     * @Route("/category", name="app_categoryIndex")
+     * @param CategoryRepository $categoryRepository
+     * @return Response
+     */
+    public function categoryNavbar(CategoryRepository $categoryRepository): Response
+    {
+        $categories = $this->getDoctrine()
+            ->getRepository(Category::class)
+            ->findAll();
+
+        return $this->render('category/index.html.twig', [
+            'categories' => $categories
         ]);
     }
 }

@@ -17,6 +17,8 @@ use App\Form\CategoryType;
 
 class CategoryController extends AbstractController
 {
+
+
     /**
      * @IsGranted("ROLE_ADMIN")
      * @Route("/wild/category", name="wild_form")

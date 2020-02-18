@@ -10,11 +10,9 @@
                     {{ 'Categories'|trans }}
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#"></a>
-                    <a class="dropdown-item" href="/wild/category/comedie">comedie</a>
-                    <a class="dropdown-item" href="/wild/category/horreur">Horreur</a>
-                    <a class="dropdown-item" href="/wild/category/drame">Drame</a>
-                    <a class="dropdown-item" href="/wild/category/jeunesse">Jeunesse</a>
+                    {{ render (controller (
+                        'App\\Controller\\DefaultController::categoryNavbar'
+                    )) }}
                 </div>
             </li>
             <li class="nav-item dropdown">
