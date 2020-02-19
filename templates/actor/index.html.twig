@@ -8,18 +8,18 @@
     <table class="table">
         <thead>
             <tr>
+                <th>Picture</th>
                 <th>Id</th>
                 <th>Name</th>
-                <th>Slug</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for actor in actors %}
             <tr>
+                <td><img class="w-25" src="/uploads/{{ actor.picture }}"></td>
                 <td>{{ actor.id }}</td>
                 <td>{{ actor.name }}</td>
-                <td>{{ actor.slug }}</td>
                 <td>
                     <a href="{{ path('actor_show', {'id': actor.id}) }}">show</a>
                     <a href="{{ path('actor_edit', {'slug': actor.slug}) }}">edit</a>

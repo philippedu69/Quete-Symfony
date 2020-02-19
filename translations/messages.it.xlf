@@ -69,6 +69,26 @@
         <source>more information</source>
         <target>Maggiori informazioni</target>
       </trans-unit>
+      <trans-unit id="U0M9PNE" resname="back to list">
+        <source>back to list</source>
+        <target>Torna alla lista</target>
+      </trans-unit>
+      <trans-unit id="FQn1YfJ" resname="Save">
+        <source>Save</source>
+        <target>Registro</target>
+      </trans-unit>
+      <trans-unit id="bmoI1XL" resname="New Program">
+        <source>New Program</source>
+        <target>Nuova linea</target>
+      </trans-unit>
+      <trans-unit id="ixZEEjS" resname="Create new Program">
+        <source>Create new Program</source>
+        <target>Aggiungere una serie</target>
+      </trans-unit>
+      <trans-unit id="4tClSWj" resname="Delete">
+        <source>Delete</source>
+        <target>Cancellare</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

@@ -10,7 +10,7 @@
                 {% for program in programs %}
                     <div class="mr-5 mt-5" id="cardAccueil">
                         <div>
-                            <img id="picture" src="{{ program.poster }}" alt="Card image cap">
+                            <img id="picture" src="/uploads/{{ program.poster }}" alt="Card image cap">
                         </div>
                         <div class="textCard ml-3 mr-3">
                             <h4>Catégorie : {{ program.category.name }}</h4>

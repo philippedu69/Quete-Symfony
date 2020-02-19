@@ -2,7 +2,10 @@
 
 namespace App\Entity;
 
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity ;
@@ -12,6 +15,7 @@ use App\Service\Slugify;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ProgramRepository")
  * @UniqueEntity("title", message="Ce titre existe déjà !")
+ * @Vich\Uploadable
  */
 class Program
 {
@@ -32,17 +36,20 @@ class Program
     /**
      * @ORM\Column(type="text")
      * @Assert\NotBlank(message="Veuillez entrer une description")
-     * @Assert\Regex(
-     *     pattern="/plus|belle|la|vie/",
-     *     match=false,
-     *     message="On parle de vraies série ici !")
      */
     private $summary;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @var string
      */
     private $poster;
+
+    /**
+     * @Vich\UploadableField(mapping="poster_file", fileNameProperty="poster")
+     * @var File
+     */
+    private $posterFile;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="programs")
@@ -65,6 +72,13 @@ class Program
      * @ORM\Column(type="string", length=255)
      */
     private $slug;
+
+    /**
+     * @ORM\Column(type="datetime")
+     * @var DateTime
+     */
+    private $updatedAt;
+
 
     public function __construct()
     {
@@ -197,4 +211,28 @@ class Program
         return $this;
     }
 
+    public function setPosterFile(File $image = null)
+    {
+        $this->posterFile = $image;
+        if($image) {
+            $this->updatedAt = new DateTime('now');
+        }
+    }
+
+    public function getPosterFile(): ?File
+    {
+        return $this->posterFile;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(\DateTimeInterface $updatedAt): self
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
 }

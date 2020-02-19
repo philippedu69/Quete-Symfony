@@ -39,7 +39,7 @@ class ActorController extends AbstractController
     public function new(Request $request, Slugify $slugify): Response
     {
         $actor = new Actor();
-        $form = $this->createForm(ActorType::class, $actor, ['method' => 'GET']);
+        $form = $this->createForm(ActorType::class, $actor);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

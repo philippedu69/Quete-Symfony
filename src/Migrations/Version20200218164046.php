@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20200212171510 extends AbstractMigration
+final class Version20200218164046 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -22,7 +22,8 @@ final class Version20200212171510 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE comment ADD created_at DATETIME NOT NULL');
+        $this->addSql('ALTER TABLE program ADD updated_at DATETIME NULL');
+        $this->addSql('ALTER TABLE comment ADD created_at DATETIME NULL');
     }
 
     public function down(Schema $schema) : void
@@ -31,5 +32,6 @@ final class Version20200212171510 extends AbstractMigration
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
         $this->addSql('ALTER TABLE comment DROP created_at');
+        $this->addSql('ALTER TABLE program DROP updated_at');
     }
 }

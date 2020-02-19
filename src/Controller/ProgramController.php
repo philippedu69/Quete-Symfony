@@ -45,7 +45,7 @@ class ProgramController extends AbstractController
     public function new(Request $request, Slugify $slugify, MailerInterface $mailer): Response
     {
         $program = new Program();
-        $form = $this->createForm(ProgramType::class, $program, ['method' => 'GET']);
+        $form = $this->createForm(ProgramType::class, $program);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
