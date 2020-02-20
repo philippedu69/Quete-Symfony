@@ -3,8 +3,8 @@
 {% block title %}liste épisode{% endblock %}
 
 {% block body %}
-    <div class="media">
-        <img class="align-self-start mr-4" src="{{season.program.poster}}" alt="{{ season.program.title }} poster">
+    <div class="media mt-5 ml-3">
+        <img class="align-self-start mr-4 picture" src="/uploads/{{season.program.poster}}" alt="{{ season.program.title }} poster">
         <div class="media-body">
         <h1 class="mt-0">{{ season.program.title }}</h1>
         <p>{{ season.program.summary }}</p>

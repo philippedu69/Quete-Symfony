@@ -3,17 +3,26 @@
 {% block title %}Actor{% endblock %}
 
 {% block body %}
-    <h2><strong>Acteur :</strong></h2>
-    <h1>{{ actor.name }}</h1>
-    <h4>Séries associées :</h4>
-    <ul>
-        {% for program in actor.programs %}
+    <h2 class="ml-5"><strong>Acteur :</strong></h2>
+    <div class="row d-flex ml-5">
+        <div class="picture">
+            <img src="/uploads/{{ actor.picture }}">
+        </div>
+        <div class="actorContent ml-5">
+            <h1>{{ actor.name }}</h1>
+            <h4>Séries associées :</h4>
+            <ul>
+                {% for program in actor.programs %}
 
-            <li><a href="{{ path('wild_show_program') ~ "/" ~ program.title|lower|replace({" ": "-"}) }}">{{ program.title }}</a></li>
-            {% else %}
-                <li>Aucune série pour cet acteur</li>
-        {% endfor %}
-    </ul>
+                    <li>
+                        <a href="{{ path('wild_show_program') ~ "/" ~ program.title|lower|replace({" ": "-"}) }}">{{ program.title }}</a>
+                    </li>
+                {% else %}
+                    <li>Aucune série pour cet acteur</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
 
 
 
